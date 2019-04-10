@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.zzg</groupId>
+    <artifactId>mysql-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>mysql-boot-web</artifactId>
+  <dependencies>
+  		<!--依赖api层  -->
+  		<dependency>
+			<groupId>com.zzg</groupId>
+			<artifactId>mysql-boot-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--依赖redis 层  -->
+		<dependency>
+			<groupId>com.zzg</groupId>
+			<artifactId>mysql-boot-redis</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--依赖mongodb 层  -->
+		<dependency>
+			<groupId>com.zzg</groupId>
+			<artifactId>mysql-boot-mongodb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--依赖email 层  -->
+		<dependency>
+			<groupId>com.zzg</groupId>
+			<artifactId>mysql-boot-email</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--依赖template 层  -->
+		<dependency>
+			<groupId>com.zzg</groupId>
+			<artifactId>mysql-boot-template</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--dubbo 服务依赖  -->
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.8.4</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+ 
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+        </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+ 
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="common-service"  />
+ 
+    <!-- 注册中心服务地址 -->
+    <dubbo:registry id="zookeeper" protocol="zookeeper" address="zookeeper://192.168.1.74:2181" />
+ 
+    <!-- 用dubbo协议在30001 -->
+    <dubbo:protocol name="dubbo" port="20882" />
+ 
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.zzg.api.BookService" ref="bookService" timeout="10000"/>
+ 
+    <!-- 具体服务接口的实现 -->
+    <bean id="bookService" class="com.zzg.service.BookServiceImpl" />
+    
+    <!--cron 服务  -->
+    <dubbo:service interface="com.zzg.api.CronService" ref="cronService" timeout="10000"/>
+    <bean id="cronService" class="com.zzg.service.CronServiceImpl" />
+    
+    <!--邮件模板服务  -->
+    <dubbo:service interface="com.zzg.api.EmailService" ref="emailService" timeout="10000"/>
+    <bean id="emailService" class="com.zzg.service.EmailServiceImpl" />
+ 
+</beans>
