@@ -52,5 +52,7 @@
 		<module>mysql-boot-mongodb</module>
 		<module>mysql-boot-email</module>
 		<module>mysql-boot-template</module>
+		<module>mysql-boot-mybatis</module>
+		<module>mysql-boot-mybatis-single</module>
 	</modules>
 </project>
